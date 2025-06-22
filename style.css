@@ -1,0 +1,30 @@
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    border: 5px solid black;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.calculator-screen {
+
+}
+.keypad {
+    display: flex;
+    flex-direction: column;
+}
+.firstKeys {
+    display: flex;
+    flex-grow: 1;
+}
+.keys {
+    display: flex;
+    justify-content: space-evenly;
+}
