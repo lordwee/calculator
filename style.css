@@ -4,27 +4,65 @@ html, body {
     align-items: center;
     height: 100%;
     width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container {
     border: 5px solid black;
-    width: 500px;
+    width: 380px;
     height: 500px;
     display: flex;
     flex-direction: column;
+    background-color: grey;
+    align-items: center;
+    padding: 10px;
 }
-.calculator-screen {
-
+.screen {
+    height: 45px;
+    width: 350px;
+    border: 5px solid black;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    background-color: antiquewhite;
 }
 .keypad {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+
 }
-.firstKeys {
+.firstkeys {
     display: flex;
-    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+    width: 280px;
+    gap: 8px;
 }
 .keys {
     display: flex;
+    height: 64px;
+    width: 280px;
+    gap: 8px;
     justify-content: space-evenly;
+}
+.firstkeys button {
+    border-radius: 100%;
+    width: 75px;
+    background-color: antiquewhite;
+    color: grey;
+}
+.keys button {
+    border-radius: 100%;
+    width: 75px;
+    background-color: antiquewhite;
+    color: grey;
+    font-size: 24px;
+}
+p {
+    color: antiquewhite;
+    font-size: 24px;
+    margin: 0px;
+    justify-self: center;
 }
