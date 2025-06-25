@@ -1,120 +1,106 @@
 
-// const add = document.querySelector(".add");
-// const subtract = document.querySelector(".subtract");
-// const multiply = document.querySelector(".multiply");
-// const divide = document.querySelector(".divide");
-// const equals = document.querySelector(".equals");
-// const zero = document.querySelector(".zero");
-// const one = document.querySelector(".one");
-// const two = document.querySelector(".two");
-// const three = document.querySelector(".three");
-// const four = document.querySelector(".four");
-// const five = document.querySelector(".five");
-// const six = document.querySelector(".six");
-// const seven = document.querySelector(".seven");
-// const eight = document.querySelector(".eight");
-// const nine = document.querySelector(".nine");
-// const point = document.querySelector(".point");
-// const ac = document.querySelector(".ac");
-// const del = document.querySelector(".del");
 let screen = document.querySelector('.screen');
 const calculator = document.querySelector(".container");
-let inputs = [];
-let firstNumber = inputs.join();
-console.log(inputs);
+let input = [];
+let numberOne;
+let numberTwo;
+let result;
+let operator;
+
 calculator.addEventListener('click', (event) => {
     let target = event.target;
     switch (target.className) {
+        case 'point':
+            getInput(".");
+            break;
         case 'zero':
-            if (inputs.length < 12) inputs.push(0);
-            
-            screen.textContent = inputs.join('');
+            getInput(0);
             break;
         case 'one':
-            inputs.push(1);
-            screen.textContent = inputs.join('');
+            getInput(1);
             break;
         case 'two':
-            inputs.push(2);
-            screen.textContent = firstNumber;
+            getInput(2);
             break;
         case 'three':
-            inputs.push(3);
-            screen.textContent = inputs.join('');
+            getInput(3);
             break;
         case 'four':
-            inputs.push(4);
-            screen.textContent = inputs.join('');
+            getInput(4);
             break;
         case 'five':
-            inputs.push(5);
-            screen.textContent = inputs.join('');
+            getInput(5);
             break;
         case 'six':
-            inputs.push(6);
-            screen.textContent = inputs.join('');
+            getInput(6);
             break;
         case 'seven':
-            inputs.push(7);
-            screen.textContent = inputs.join('');
+            getInput(7);
             break;
         case 'eight':
-            inputs.push(8);
-            screen.textContent = inputs.join('');
+            getInput(8);
             break;
         case 'nine':
-            inputs.push(9);
-            screen.textContent = inputs.join('');
+            getInput(9);
+            
             break;
         case 'add':
-            doAdd(firstNumber);
+            numberOne = numberTwo;
+            operator = doAdd;
+            input = [];
             break;
         case 'subtract':
-            doSubtract();
+            numberOne = numberTwo;
+            input = [];
+            operator = doSubtract;
             break;
         case 'multiply':
-            doMultiply()
+            numberOne = numberTwo;
+            operator = doMultiply;
+            input = [];
             break;
         case 'divide':
-            doDivide()
+            numberOne = numberTwo;
+            operator = doDivide;
+            input = [];
             break;
         case 'ac':
-            inputs = [];
-            screen.textContent = '';
+            input = [];
+            screen.textContent = '0';
             break;
         case 'del':
             console.log("del");
             break;
-        case 'point':
-            inputs.push('.');
-            screen.textContent = inputs.join('');
-            break;
         case 'equals':
-            console.log("equals")
+            operate(numberOne, numberTwo, operator);
+            screen.textContent = result;
+            break;
     }
 });
-let firstInput;
-let secondInput;
-let operator;
 
+   
 // FUNCTIONS ____________________________________________________
 
+ function getInput(item) {
+     input.push(item)
+     screen.textContent = input.join('');
+     return numberTwo = (parseFloat(input.join(''))); 
+}  
+
 function doAdd(a, b) {
-    console.log(firstNumber);
-    
- }
+    return a + b;
+}
 function doSubtract(a, b) {
     return a - b;
- }
-function doMultiply(a, b) {
-    return a * b;
- }
-function doDivide(a, b) {
-    
-    let result = a / b;
-    return result.toFixed(2);
 }
-function operate(inputOne, inputTwo, operator) {
-    
+function doDivide (a, b) {
+    return a / b
+}
+function doMultiply (a, b) {
+        return a * b;
+}
+function operate(inputOne, inputTwo, func) {
+    result = func(inputOne, inputTwo);
+    return result;
 }
 
