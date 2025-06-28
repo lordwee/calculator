@@ -8,6 +8,10 @@ html, body {
     width: 100%;
     font-family:'Courier New', Courier, monospace;
 }
+.para {
+    justify-self:flex-start;
+    color: black;
+}
 .header {
     height: 80px;
     background-color: grey;
